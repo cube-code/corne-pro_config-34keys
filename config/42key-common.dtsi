@@ -3,7 +3,7 @@
 #define NUM_SYM 2
 #define FN_NUMP 3
 #define MEDIA   4
-#define WIN_ARR  5
+#define WIN_ARR 5
 
 // #include "key-common.dtsi"
 
@@ -13,6 +13,19 @@
 };
 
 / {
+
+// Tap dance setting
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RShift when tap once, CapsL when tap twice";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RSHFT>, <&kp CAPS>;
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -30,13 +43,13 @@
           label = "Basic";
 // -----------------------------------------------------------------------------------------
 // | Tab , Mo(L4) |  Q  |  W  |  E  |  R  |  T  ||  ||  Y  |  U   |  I  |  O  |  P  | BKSP               |
-// | Cmd          |  A  |  S  |  D  |  F  |  G  ||  ||  H  |  J   |  K  |  L  |  ;  | Enter              |
-// | Shift        |  Z  |  X  |  C  |  V  |  B  ||  ||  N  |  M   |  ,  |  .  |  /  | RShift , Td(CapsL) |
-//             | Esc , Mo(L2) | Spc | Tab, Opt  ||  || LCtrl      | Spc , Mo(L3)    | ` , RCMD           |
+// | LCmd         |  A  |  S  |  D  |  F  |  G  ||  ||  H  |  J   |  K  |  L  |  ;  | Enter              |
+// | LShift       |  Z  |  X  |  C  |  V  |  B  ||  ||  N  |  M   |  ,  |  .  |  /  | RShift , Td(CapsL) |
+// |             Esc , Mo(L2) | Spc | Tab, LOpt ||  || LCtrl      | Spc , Mo(L3)    | ` , RCMD           |
                         bindings = <
    &lt FN_NUMP TAB &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCMD        &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp ENTER
-   &kp LSHFT       &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+   &kp LSHFT       &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &td0
                    &lt CMD ESC &kp SPACE   &mt LALT TAB    &kp LCTRL    &lt NUM_SYM SPACE &mt RCMD GRAVE
                         >;
                 };
@@ -45,10 +58,10 @@
         2nd_layer {
           label = "Command";
 // -----------------------------------------------------------------------------------------
-// | Cmd + , | Cmd + H    | Line Head | Up      | Line End  |          ||  ||       | F13 | F14  |  F15      |      | BKSP   |
-// | Cmd     | Pre Tab    | Left      | Down    | Right     | Next Tab ||  ||       |     | Home | Page Up   | BKSP | Enter  |
-// | LShift  | Screen Off | Pre Word  | Cmd + k | Next Word | Cmd + m  ||  ||       | Del | End  | Page Down |      | RShift |
-//                                    |         |           |          ||  || RCtrl | Opt | Cmd  |
+// | LCmd + , | LCmd + H   | Line Head | Up       | Line End  |          ||  ||       | F13  | F14  |  F15      |      | BKSP   |
+// | LCmd     | Pre Tab    | Left      | Down     | Right     | Next Tab ||  ||       |      | Home | Page Up   | BKSP | Enter  |
+// | LShift   | Screen Off | Pre Word  | LCmd + K | Next Word | LCmd + M ||  ||       | Del  | End  | Page Down |      | RShift |
+//                                     |          |           |          ||  || RCtrl | ROpt | RCmd |
                         bindings = <
    &kp LG(COMMA) &kp LG(H)       &kp LG(LEFT) &kp UP    &kp LG(RIGHT) &none          &none     &kp F13  &kp F14  &kp F15       &none    &kp BSPC
    &kp LCMD      &kp LG(LS(TAB)) &kp LEFT     &kp DOWN  &kp RIGHT     &kp LG(TAB)    &none     &none    &kp HOME &kp PAGE_UP   &kp BSPC &kp ENTER
@@ -61,10 +74,10 @@
         3rd_layer {
             label = "Number & Symbol";
 // -----------------------------------------------------------------------------------------
-// |  `     |  1  |  2  |  3  |  4  |  5   ||  || 6    | 7    | 8   | 9     | 0   | -      |
-// | Cmd    |     |  \  |  ]  |  [  |      ||  || Left | Down | Up  | Right | Spc | =      |
-// | LShift |     |     |     |     |      ||  ||      | '    | ,   | .     | /   | RShift |
-//                      |     | Opt | Ctrl ||  ||      |      |     |
+// |  `     |  1  |  2  |  3  |  4  | 5     ||  || 6    | 7    | 8   | 9     | 0   | -      |
+// | LCmd   |     |  \  |  ]  |  [  |       ||  || Left | Down | Up  | Right | Spc | =      |
+// | LShift |     |     |     |     |       ||  ||      | '    | ,   | .     | /   | RShift |
+//                |     | LOpt      | LCtrl ||  ||      |      |     |
                         bindings = <
    &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4   &kp N5      &kp N6   &kp N7           &kp N8    &kp N9    &kp N0    &kp MINUS
    &kp LCMD  &none  &kp BSLH &kp RBKT &kp LBRC &none       &kp LEFT &kp DOWN         &kp UP    &kp RIGHT &kp SPACE &kp EQUAL
@@ -77,10 +90,10 @@
          4th_layer {
             label = "Fn Keys & Number Pad";
 // -----------------------------------------------------------------------------------------
-// |    | Mo(L6) |  F7  |  F8  |  F9  |  F10  ||  || Tab |  7   |  8  |  9  | Spc | BKSP   |
-// |    |        |  F4  |  F5  |  F6  |  F11  ||  ||  *  |  4   |  5  |  6  |  +  | Enter  |
-// |    |        |  F1  |  F2  |  F3  |  F12  ||  ||  /  |  1   |  2  |  3  |  -  | RShift |
-//                   | Tog(L4) | Opt | Mo(L5) ||  || Spc | 0 , Mo(L5) |  .  |
+// |    | Mo(L6) |  F7  |  F8  |  F9  | F10    ||  || Tab |  7   |  8  |  9  | Spc | BKSP   |
+// |    |        |  F4  |  F5  |  F6  | F11    ||  ||  *  |  4   |  5  |  6  |  +  | Enter  |
+// |    |        |  F1  |  F2  |  F3  | F12    ||  ||  /  |  1   |  2  |  3  |  -  | RShift |
+//               |  Tog(L4)    | LOpt | Mo(L5) ||  || Spc | 0 , Mo(L5) |  .  |
                         bindings = <
    &none &mo WIN_ARR &kp F7 &kp F8 &kp F9   &kp F10     &kp TAB         &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp SPACE    &kp BSPC
    &none &none       &kp F4 &kp F5 &kp F6   &kp F11     &kp KP_MULTIPLY &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &kp ENTER
@@ -109,10 +122,10 @@
          5th_layer {
             label = "Window Arrangement";
 // -----------------------------------------------------------------------------------------
-// |    |    | Ctrl + Opt + Shift + T | Ctrl + Opt + Shift + Y | Ctrl + Opt + Shift + U | Ctrl + Opt + Shift + I ||  ||                   |                        |     |                    |    | Ctrl + Opt + Shift + BKSP  |
-// |    |    | Ctrl + Opt + Shift + G | Ctrl + Opt + Shift + H | Ctrl + Opt + Shift + J | Ctrl + Opt + Shift + K ||  || Ctrl + Opt + Left | Ctrl + Opt + Shift + Z |     | Ctrl + Opt + Right |    | Ctrl + Opt + Shift + Enter |
-// |    |    | Ctrl + Opt + Shift + B | Ctrl + Opt + Shift + N | Ctrl + Opt + Shift + M | Ctrl + Opt + Shift + , ||  ||                   |                        |     |                    |    |                            |
-//                                    |                        |                        |                        ||  ||                   |                        |     |
+// |    |    | LCtrl + LOpt + LShift + T | LCtrl + LOpt + LShift + Y | LCtrl + LOpt + LShift + U | LCtrl + LOpt + LShift + I ||  ||                     |                           |     |                      |    | LCtrl + LOpt + LShift + BKSP  |
+// |    |    | LCtrl + LOpt + LShift + G | LCtrl + LOpt + LShift + H | LCtrl + LOpt + LShift + J | LCtrl + LOpt + LShift + K ||  || LCtrl + LOpt + Left | LCtrl + LOpt + LShift + Z |     | LCtrl + LOpt + Right |    | LCtrl + LOpt + LShift + Enter |
+// |    |    | LCtrl + LOpt + LShift + B | LCtrl + LOpt + LShift + N | LCtrl + LOpt + LShift + M | LCtrl + LOpt + LShift + , ||  ||                     |                           |     |                      |    |                               |
+//                                       |                           |                           |                           ||  ||                     |                           |     |
                         bindings = <
    &none &none &kp LC(LA(LS(T))) &kp LC(LA(LS(Y))) &kp LC(LA(LS(U))) &kp LC(LA(LS(I)))       &none            &none             &none     &none             &none   &kp LC(LA(LS(BSPC)))
    &none &none &kp LC(LA(LS(G))) &kp LC(LA(LS(H))) &kp LC(LA(LS(J))) &kp LC(LA(LS(K)))       &kp LC(LA(LEFT)) &kp LC(LA(LS(Z))) &none     &kp LC(LA(RIGHT)) &none   &kp LC(LA(LS(ENTER)))
