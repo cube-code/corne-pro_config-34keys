@@ -9,11 +9,11 @@
 #define LV_ATTRIBUTE_MEM_ALIGN
 #endif
 
-#ifndef LV_ATTRIBUTE_IMG_1
-#define LV_ATTRIBUTE_IMG_1
+#ifndef LV_ATTRIBUTE_IMG_CUSTOMLOGO
+#define LV_ATTRIBUTE_IMG_CUSTOMLOGO
 #endif
 
-const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_1 uint8_t 1_map[] = {
+const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_CUSTOMLOGO uint8_t customlogo_map[] = {
   0x0a, 0x0a, 0x0a, 0x00, 	/*Color of index 0*/
   0xd3, 0xd2, 0xd1, 0xef, 	/*Color of index 1*/
 
@@ -89,12 +89,12 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_1 uint8_t
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t 1 = {
+const lv_img_dsc_t customlogo = {
   .header.cf = LV_IMG_CF_INDEXED_1BIT,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 80,
   .header.h = 70,
   .data_size = 708,
-  .data = 1_map,
+  .data = customlogo_map,
 };
