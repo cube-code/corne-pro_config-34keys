@@ -12,6 +12,11 @@
    tapping_term_ms = <200>;
 };
 
+&lt {
+   flavor = "hold-preferred";
+   tapping_term_ms = <200>;
+};
+
 / {
 
 // Tap dance setting
@@ -63,10 +68,10 @@
 // | LShift   | Screen Off | Pre Word  | LCmd + K | Next Word | LCmd + M ||  ||       | Del  | End  | Page Down |      | RShift |
 //                                     |          |           |          ||  || RCtrl | ROpt | RCmd |
                         bindings = <
-   &kp LG(COMMA) &kp LG(H)        &kp LG(LEFT) &kp UP    &kp LG(RIGHT) &none          &none     &kp F13  &kp F14  &kp F15       &none    &kp BSPC
-   &kp LCMD      &kp LC(LS(TAB))  &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(TAB)    &none     &none    &kp HOME &kp PAGE_UP   &kp BSPC &kp ENTER
-   &kp LSHFT     &kp C_SLEEP_MODE &kp LA(LEFT) &kp LG(K) &kp LA(RIGHT) &kp LG(M)      &none     &kp DEL  &kp END  &kp PAGE_DOWN &none    &kp RSHFT
-                          	                   &none     &none         &none          &kp RCTRL &kp RALT &kp RCMD
+   &kp LG(COMMA) &kp LG(H)       &kp LG(LEFT) &kp UP    &kp LG(RIGHT) &none          &none     &kp F13  &kp F14  &kp F15       &none    &kp BSPC
+   &kp LCMD      &kp LC(LS(TAB)) &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(TAB)    &none     &none    &kp HOME &kp PAGE_UP   &kp BSPC &kp ENTER
+   &kp LSHFT     &kp K_SLEEP     &kp LA(LEFT) &kp LG(K) &kp LA(RIGHT) &kp LG(M)      &none     &kp DEL  &kp END  &kp PAGE_DOWN &none    &kp RSHFT
+                          	                  &none     &none         &none          &kp RCTRL &kp RALT &kp RCMD
                         >;
                 };
 
