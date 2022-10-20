@@ -55,7 +55,7 @@
                 };
 
 
-        1nd_layer {
+        1st_layer {
           label = "Command";
 // -----------------------------------------------------------------------------------------
 // | LCmd + , | LCmd + H   | Line Head | Up       | Line End  |          ||  ||       | F13  | F14  |  F15      |      | BKSP   |
@@ -71,7 +71,7 @@
                 };
 
 
-        2rd_layer {
+        2nd_layer {
             label = "Number & Symbol";
 // -----------------------------------------------------------------------------------------
 // |  `     |  1  |  2  |  3  |  4  | 5     ||  || 6    | 7    | 8   | 9     | 0   | -      |
@@ -80,14 +80,14 @@
 //                |     | LOpt      | LCtrl ||  ||      |      |     |
                         bindings = <
    &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4   &kp N5      &kp N6   &kp N7           &kp N8    &kp N9    &kp N0    &kp MINUS
-   &kp LCMD  &none  &kp BSLH &kp RBKT &kp LBRT &none       &kp LEFT &kp DOWN         &kp UP    &kp RIGHT &kp SPACE &kp EQUAL
+   &kp LCMD  &none  &kp BSLH &kp RBKT &kp LBKT &none       &kp LEFT &kp DOWN         &kp UP    &kp RIGHT &kp SPACE &kp EQUAL
    &kp LSHFT &none  &none    &none    &none    &none       &none    &kp SINGLE_QUOTE &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
                     	     &none    &kp LALT &kp LCTRL   &none    &none            &none
                         >;
                 };
 
 
-         3th_layer {
+         3rd_layer {
             label = "Fn Keys & Number Pad";
 // -----------------------------------------------------------------------------------------
 // |    | Mo(L5) |  F7  |  F8  |  F9  | F10    ||  || Tab |  7   |  8  |  9  | Spc | BKSP   |
