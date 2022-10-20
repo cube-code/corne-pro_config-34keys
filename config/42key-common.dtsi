@@ -45,7 +45,7 @@
 
 
         default_layer {
-          label = "Basic";
+          label = "Base";
 // -----------------------------------------------------------------------------------------
 // | Tab , Mo(L3) |  Q  |  W  |  E  |  R  |  T  ||  ||  Y  |  U   |  I  |  O  |  P  | BKSP               |
 // | LCmd         |  A  |  S  |  D  |  F  |  G  ||  ||  H  |  J   |  K  |  L  |  ;  | Enter              |
@@ -61,7 +61,7 @@
 
 
         1st_layer {
-          label = "Command";
+          label = "Cmd";
 // -----------------------------------------------------------------------------------------
 // | LCmd + , | LCmd + H   | Line Head | Up       | Line End  |          ||  ||       | F13  | F14  |  F15      |      | BKSP   |
 // | LCmd     | Pre Tab    | Left      | Down     | Right     | Next Tab ||  ||       |      | Home | Page Up   | BKSP | Enter  |
@@ -77,7 +77,7 @@
 
 
         2nd_layer {
-            label = "Number & Symbol";
+            label = "Nu&Sy";
 // -----------------------------------------------------------------------------------------
 // |  `     |  1  |  2  |  3  |  4  | 5     ||  || 6    | 7    | 8   | 9     | 0   | -      |
 // | LCmd   |     |  \  |  ]  |  [  |       ||  || Left | Down | Up  | Right | Spc | =      |
@@ -93,7 +93,7 @@
 
 
          3rd_layer {
-            label = "Fn Keys & Number Pad";
+            label = "FnNuP";
 // -----------------------------------------------------------------------------------------
 // |    | Mo(L5) |  F7  |  F8  |  F9  | F10    ||  || Tab |  7   |  8  |  9  | Spc | BKSP   |
 // |    |        |  F4  |  F5  |  F6  | F11    ||  ||  *  |  4   |  5  |  6  |  +  | Enter  |
@@ -125,7 +125,7 @@
 
 
          5th_layer {
-            label = "Window Arrangement";
+            label = "WinAr";
 // -----------------------------------------------------------------------------------------
 // |    |    | LCtrl + LOpt + LShift + T | LCtrl + LOpt + LShift + Y | LCtrl + LOpt + LShift + U | LCtrl + LOpt + LShift + I ||  ||                     |                           |     |                      |    | LCtrl + LOpt + LShift + BKSP  |
 // |    |    | LCtrl + LOpt + LShift + G | LCtrl + LOpt + LShift + H | LCtrl + LOpt + LShift + J | LCtrl + LOpt + LShift + K ||  || LCtrl + LOpt + Left | LCtrl + LOpt + LShift + Z |     | LCtrl + LOpt + Right |    | LCtrl + LOpt + LShift + Enter |
