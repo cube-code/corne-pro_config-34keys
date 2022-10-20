@@ -5,6 +5,8 @@
 #define MEDIA   4
 #define WIN_ARR 5
 
+#define NONE 0
+
 // #include "key-common.dtsi"
 
 &mt {
