@@ -5,7 +5,7 @@
 #define MEDIA   4
 #define WIN_ARR 5
 
-#define NONE 0
+// #define NONE 0
 
 // #include "key-common.dtsi"
 
@@ -105,7 +105,7 @@
    &none &mo WIN_ARR &kp F7 &kp F8 &kp F9 &kp F10  &kp TAB         &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp SPACE    &kp BSPC
    &none &none       &kp F4 &kp F5 &kp F6 &kp F11  &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &kp ENTER
    &none &none       &kp F1 &kp F2 &kp F3 &kp F12  &kp KP_DIVIDE   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_MINUS &kp RSHFT
-                            &tog FN_NUMP  &kp LALT &mo MEDIA       &kp SPACE &lt MEDIA KP_N0     &kp DOT
+                            &tog 3  &kp LALT &mo MEDIA       &kp SPACE &lt MEDIA KP_N0     &kp DOT
                         >;
                 };
 
