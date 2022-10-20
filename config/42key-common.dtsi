@@ -39,13 +39,13 @@
 // CBT	: Connect to bluetooth device
 
 
-        1st_layer {
+        default_layer {
           label = "Basic";
 // -----------------------------------------------------------------------------------------
-// | Tab , Mo(L4) |  Q  |  W  |  E  |  R  |  T  ||  ||  Y  |  U   |  I  |  O  |  P  | BKSP               |
+// | Tab , Mo(L3) |  Q  |  W  |  E  |  R  |  T  ||  ||  Y  |  U   |  I  |  O  |  P  | BKSP               |
 // | LCmd         |  A  |  S  |  D  |  F  |  G  ||  ||  H  |  J   |  K  |  L  |  ;  | Enter              |
 // | LShift       |  Z  |  X  |  C  |  V  |  B  ||  ||  N  |  M   |  ,  |  .  |  /  | RShift , Td(CapsL) |
-// |             Esc , Mo(L2) | Spc | Tab, LOpt ||  || LCtrl      | Spc , Mo(L3)    | ` , RCMD           |
+// |             Esc , Mo(L1) | Spc | Tab, LOpt ||  || LCtrl      | Spc , Mo(L2)    | ` , RCMD           |
                         bindings = <
    &lt FN_NUMP TAB &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCMD        &kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp ENTER
@@ -55,7 +55,7 @@
                 };
 
 
-        2nd_layer {
+        1nd_layer {
           label = "Command";
 // -----------------------------------------------------------------------------------------
 // | LCmd + , | LCmd + H   | Line Head | Up       | Line End  |          ||  ||       | F13  | F14  |  F15      |      | BKSP   |
@@ -63,15 +63,15 @@
 // | LShift   | Screen Off | Pre Word  | LCmd + K | Next Word | LCmd + M ||  ||       | Del  | End  | Page Down |      | RShift |
 //                                     |          |           |          ||  || RCtrl | ROpt | RCmd |
                         bindings = <
-   &kp LG(COMMA) &kp LG(H)       &kp LG(LEFT) &kp UP    &kp LG(RIGHT) &none          &none     &kp F13  &kp F14  &kp F15       &none    &kp BSPC
-   &kp LCMD      &kp LG(LS(TAB)) &kp LEFT     &kp DOWN  &kp RIGHT     &kp LG(TAB)    &none     &none    &kp HOME &kp PAGE_UP   &kp BSPC &kp ENTER
-   &kp LSHFT     &kp C_SLEEP     &kp LA(LEFT) &kp LG(K) &kp LA(RIGHT) &kp LA(M)      &none     &kp DEL  &kp END  &kp PAGE_DOWN &none    &kp RSHFT
-                          	                  &none     &none         &none          &kp RCTRL &kp RALT &kp RCMD
+   &kp LG(COMMA) &kp LG(H)        &kp LG(LEFT) &kp UP    &kp LG(RIGHT) &none          &none     &kp F13  &kp F14  &kp F15       &none    &kp BSPC
+   &kp LCMD      &kp LC(LS(TAB))  &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(TAB)    &none     &none    &kp HOME &kp PAGE_UP   &kp BSPC &kp ENTER
+   &kp LSHFT     &kp C_SLEEP_MODE &kp LA(LEFT) &kp LG(K) &kp LA(RIGHT) &kp LG(M)      &none     &kp DEL  &kp END  &kp PAGE_DOWN &none    &kp RSHFT
+                          	                   &none     &none         &none          &kp RCTRL &kp RALT &kp RCMD
                         >;
                 };
 
 
-        3rd_layer {
+        2rd_layer {
             label = "Number & Symbol";
 // -----------------------------------------------------------------------------------------
 // |  `     |  1  |  2  |  3  |  4  | 5     ||  || 6    | 7    | 8   | 9     | 0   | -      |
@@ -80,20 +80,20 @@
 //                |     | LOpt      | LCtrl ||  ||      |      |     |
                         bindings = <
    &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4   &kp N5      &kp N6   &kp N7           &kp N8    &kp N9    &kp N0    &kp MINUS
-   &kp LCMD  &none  &kp BSLH &kp RBKT &kp LBRC &none       &kp LEFT &kp DOWN         &kp UP    &kp RIGHT &kp SPACE &kp EQUAL
+   &kp LCMD  &none  &kp BSLH &kp RBKT &kp LBRT &none       &kp LEFT &kp DOWN         &kp UP    &kp RIGHT &kp SPACE &kp EQUAL
    &kp LSHFT &none  &none    &none    &none    &none       &none    &kp SINGLE_QUOTE &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
                     	     &none    &kp LALT &kp LCTRL   &none    &none            &none
                         >;
                 };
 
 
-         4th_layer {
+         3th_layer {
             label = "Fn Keys & Number Pad";
 // -----------------------------------------------------------------------------------------
-// |    | Mo(L6) |  F7  |  F8  |  F9  | F10    ||  || Tab |  7   |  8  |  9  | Spc | BKSP   |
+// |    | Mo(L5) |  F7  |  F8  |  F9  | F10    ||  || Tab |  7   |  8  |  9  | Spc | BKSP   |
 // |    |        |  F4  |  F5  |  F6  | F11    ||  ||  *  |  4   |  5  |  6  |  +  | Enter  |
 // |    |        |  F1  |  F2  |  F3  | F12    ||  ||  /  |  1   |  2  |  3  |  -  | RShift |
-//               |  Tog(L4)    | LOpt | Mo(L5) ||  || Spc | 0 , Mo(L5) |  .  |
+//               |  Tog(L3)    | LOpt | Mo(L4) ||  || Spc | 0 , Mo(L4) |  .  |
                         bindings = <
    &none &mo WIN_ARR &kp F7 &kp F8 &kp F9   &kp F10     &kp TAB         &kp KP_N7  &kp KP_N8 &kp KP_N9 &kp SPACE    &kp BSPC
    &none &none       &kp F4 &kp F5 &kp F6   &kp F11     &kp KP_MULTIPLY &kp KP_N4  &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &kp ENTER
@@ -103,7 +103,7 @@
                 };
 
 
-         5th_layer {
+         4th_layer {
             label = "Media";
 // -----------------------------------------------------------------------------------------
 // |    |                           | CBT 1 | Play / Pause |                 |                          ||  ||      |      |    |       |    |    |
