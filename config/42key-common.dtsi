@@ -69,10 +69,10 @@
 // | LShift   | Screen Off | Pre Word  | LCmd + K | Next Word | LCmd + M ||  ||         | Del  | End  | Page Down |      | RShift |
 //                                     |          |           |          ||  || RCtrl   | ROpt | RCmd |
                         bindings = <
-   &kp LG(COMMA) &kp LG(H)       &kp LG(LEFT) &kp UP    &kp LG(RIGHT) &none          &kp C_STOP_EJECT        &kp F13  &kp F14  &kp F15       &none    &kp BSPC
-   &kp LCMD      &kp LC(LS(TAB)) &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(TAB)    &tog FN_NUMP &none    &kp HOME &kp PAGE_UP   &kp BSPC &kp ENTER
-   &kp LSHFT     &mac_screen_sleep     &kp LA(LEFT) &kp LG(K) &kp LA(RIGHT) &kp LG(M)      &kp C_EJECT        &kp DEL  &kp END  &kp PAGE_DOWN &none    &kp RSHFT
-                          	                  &none     &none         &none          &kp RCTRL    &kp RALT &kp RCMD
+   &kp LG(COMMA) &kp LG(H)         &kp LG(LEFT) &kp UP    &kp LG(RIGHT) &none          &none        &kp F13  &kp F14  &kp F15       &none    &kp BSPC
+   &kp LCMD      &kp LC(LS(TAB))   &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(TAB)    &tog FN_NUMP &none    &kp HOME &kp PAGE_UP   &kp BSPC &kp ENTER
+   &kp LSHFT     &mac_screen_sleep &kp LA(LEFT) &kp LG(K) &kp LA(RIGHT) &kp LG(M)      &none        &kp DEL  &kp END  &kp PAGE_DOWN &none    &kp RSHFT
+                          	                    &none     &none         &none          &kp RCTRL    &kp RALT &kp RCMD
                         >;
                 };
 
@@ -85,10 +85,10 @@
 // | LShift |     |     |     |     |       ||  ||      | '    | ,   | .     | /   | RShift |
 //                |     | LOpt      | LCtrl ||  ||      |      |     |
                         bindings = <
-   &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4   &kp N5      &kp N6   &kp N7           &kp N8    &kp N9    &kp N0    &kp MINUS
-   &kp LCMD  &none  &kp BSLH &kp RBKT &kp LBKT &none       &kp LEFT &kp DOWN         &kp UP    &kp RIGHT &kp SPACE &kp EQUAL
-   &kp LSHFT &none  &none    &none    &none    &none       &none    &kp SINGLE_QUOTE &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                    	     &none    &kp LALT &kp LCTRL   &none    &none            &none
+   &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7           &kp N8    &kp N9    &kp N0    &kp MINUS
+   &kp LCMD  &none  &kp BSLH &kp RBKT &kp LBKT &none        &kp LEFT &kp DOWN         &kp UP    &kp RIGHT &kp SPACE &kp EQUAL
+   &kp LSHFT &none  &none    &none    &none    &none        &none    &kp SINGLE_QUOTE &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                    	     &none    &kp LALT &kp LCTRL    &none    &none            &none
                         >;
                 };
 
@@ -101,10 +101,10 @@
 // |    |        |  F1  |  F2  |  F3  | F12    ||  ||  /  |  1   |  2  |  3  |  -  | RShift |
 //               |  Tog(L3)    | LOpt | Mo(L4) ||  || Spc | 0 , Mo(L4) |  .  |
                         bindings = <
-   &none &mo WIN_ARR &kp F7 &kp F8 &kp F9 &kp F10   &kp TAB         &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp SPACE    &kp BSPC
-   &none &none       &kp F4 &kp F5 &kp F6 &kp F11   &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &kp ENTER
-   &none &none       &kp F1 &kp F2 &kp F3 &kp F12   &kp KP_DIVIDE   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_MINUS &kp RSHFT
-                            &tog FN_NUMP  &kp LALT  &mo MEDIA       &kp SPACE &lt MEDIA KP_N0     &kp DOT
+   &none &mo WIN_ARR &kp F7 &kp F8 &kp F9 &kp F10     &kp TAB         &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp SPACE    &kp BSPC
+   &none &none       &kp F4 &kp F5 &kp F6 &kp F11     &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &kp ENTER
+   &none &none       &kp F1 &kp F2 &kp F3 &kp F12     &kp KP_DIVIDE   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_MINUS &kp RSHFT
+                            &tog FN_NUMP  &kp LALT    &mo MEDIA       &kp SPACE &lt MEDIA KP_N0     &kp DOT
                         >;
                 };
 
@@ -117,10 +117,10 @@
 // |    | Clear current ble profile | CBT 3 | Vol Down     | Scn Bright Down | Turn off Keyboard Screen ||  ||      |      |    |       |    |    |
 //                                          |              |                 |                          ||  ||      |      |    |
                         bindings = <
-   &none &none      &bt BT_SEL 0 &kp C_PLAY_PAUSE &none        &none               &none    &none    &none  &none     &none &none
-   &none &none      &bt BT_SEL 1 &kp C_VOL_UP     &kp C_BRI_UP &out OUT_TOG        &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &none
-   &none &bt BT_CLR &bt BT_SEL 2 &kp C_VOL_DN     &kp C_BRI_DN &ext_power EP_TOG   &none    &none    &none  &none     &none &none
-                    &none        &none            &none        &none               &none    &none
+   &none &none      &bt BT_SEL 0 &kp C_PLAY_PAUSE &none        &none                &none    &none    &none  &none     &none &none
+   &none &none      &bt BT_SEL 1 &kp C_VOL_UP     &kp C_BRI_UP &out OUT_TOG         &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &none
+   &none &bt BT_CLR &bt BT_SEL 2 &kp C_VOL_DN     &kp C_BRI_DN &ext_power EP_TOG    &none    &none    &none  &none     &none &none
+                    &none        &none            &none        &none                &none    &none
                         >;
                 };
 
@@ -133,10 +133,10 @@
 // |    |    | LCtrl + LOpt + LShift + B | LCtrl + LOpt + LShift + N | LCtrl + LOpt + LShift + M | LCtrl + LOpt + LShift + , ||  ||                     |                           |     |                      |    |                               |
 //                                       |                           |                           |                           ||  ||                     |                           |     |
                         bindings = <
-   &none &none &kp LC(LA(LS(T))) &kp LC(LA(LS(Y))) &kp LC(LA(LS(U))) &kp LC(LA(LS(I)))       &none            &none             &none     &none             &none   &kp LC(LA(LS(BSPC)))
-   &none &none &kp LC(LA(LS(G))) &kp LC(LA(LS(H))) &kp LC(LA(LS(J))) &kp LC(LA(LS(K)))       &kp LC(LA(LEFT)) &kp LC(LA(LS(Z))) &none     &kp LC(LA(RIGHT)) &none   &kp LC(LA(LS(ENTER)))
-   &none &none &kp LC(LA(LS(B))) &kp LC(LA(LS(N))) &kp LC(LA(LS(M))) &kp LC(LA(LS(COMMA)))   &none            &none             &none     &none             &none   &none
-                                 &none             &none             &none                   &none            &none             &none
+   &none &none &kp LC(LA(LS(T))) &kp LC(LA(LS(Y))) &kp LC(LA(LS(U))) &kp LC(LA(LS(I)))        &none            &none             &none     &none             &none   &kp LC(LA(LS(BSPC)))
+   &none &none &kp LC(LA(LS(G))) &kp LC(LA(LS(H))) &kp LC(LA(LS(J))) &kp LC(LA(LS(K)))        &kp LC(LA(LEFT)) &kp LC(LA(LS(Z))) &none     &kp LC(LA(RIGHT)) &none   &kp LC(LA(LS(ENTER)))
+   &none &none &kp LC(LA(LS(B))) &kp LC(LA(LS(N))) &kp LC(LA(LS(M))) &kp LC(LA(LS(COMMA)))    &none            &none             &none     &none             &none   &none
+                                 &none             &none             &none                    &none            &none             &none
                         >;
                 };
 
