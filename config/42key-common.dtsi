@@ -1,8 +1,5 @@
 #define DEFAULT 0
-#define CMD     1
-#define NUM_SYM 2
-#define FN_NUMP 3
-#define MOD     4
+
 
 
 #include "key-common.dtsi"
@@ -43,62 +40,15 @@
           label = "Base";
 
                         bindings = <
-   &none  &lt FN_NUMP Q  &kp W         &kp E        &kp R          &kp T          &kp Y  &kp U              &kp I           &kp O         &kp P           &none
+   &none  &kp Q  &kp W         &kp E        &kp R          &kp T          &kp Y  &kp U              &kp I           &kp O         &kp P           &none
    &none  &bhm LCMD A    &bhm LSHFT S  &bhm LALT D  &bhm LCTRL F   &kp G          &kp H  &bhm RCTRL J       &bhm RALT K     &bhm RSHFT L  &bhm RCMD SEMI  &none
-   &none  &lt CMD_LEF Z  &kp X         &kp C        &kp V          &kp B          &kp N  &kp M              &kp COMMA       &kp DOT       &kp FSLH        &none
-                                       &lt CMD TAB  &lt MOD SPACE  &none          &none  &lt NUM_SYM SPACE  &mt RCMD GRAVE
+   &none  &kp Z  &kp X         &kp C        &kp V          &kp B          &kp N  &kp M              &kp COMMA       &kp DOT       &kp FSLH        &none
+                                       &kp TAB  &kp SPACE  &none          &none  &kp SPACE  &mt RCMD GRAVE
                         >;
                 };
 
 
-        1st_layer {
-          label = "Cmd";
-
-                        bindings = <
-   &none  &none                 &kp LG(LEFT)  &kp UP     &kp LG(RIGHT)   &none                &none         &kp F13    &kp F14   &kp F15        &kp BSPC   &none
-   &none  &kp LC(LS(TAB))  &kp LEFT      &kp DOWN   &kp RIGHT       &kp LC(TAB)          &tog FN_NUMP  &none     &kp HOME  &kp PAGE_UP    &kp ENTER  &none
-   &none  &mac_screen_sleep     &kp LA(LEFT)  &kp LG(K)  &kp LA(RIGHT)   &kp LG(M)            &kp CAPS     &kp DEL    &kp END   &kp PAGE_DOWN  &none      &none
-                          	                  &none      &none           &none                &none         &kp RALT   &kp RCMD
-                        >;
-                };
-
-
-        2nd_layer {
-            label = "NuSy";
-
-                        bindings = <
-   &none  &kp N1    &kp N2           &kp N3          &kp N4           &kp N5             &kp N6    &kp N7            &kp N8        &kp N9            &kp N0           &none
-   &none  &kp LCMD  &bhm LSHFT BSLH  &bhm LALT RBKT  &bhm LCTRL LBKT  &none              &kp LEFT  &bhm RCTRL DOWN   &bhm RALT UP  &bhm RSHFT RIGHT  &bhm RCMD SPACE  &none
-   &none  &none     &none            &kp MINUS       &kp EQUAL        &none              &none     &kp SINGLE_QUOTE  &kp COMMA     &kp DOT           &kp FSLH         &none
-                    	             &none           &none            &none              &none     &none             &none
-                        >;
-                };
-
-
-         3rd_layer {
-            label = "FnNP";
-
-                        bindings = <
-   &none  &none  &kp F7  &kp F8  &kp F9    &kp F10               &kp TAB          &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp SPACE     &none
-   &none  &none  &kp F4          &kp F5  &kp F6    &kp F11               &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &none
-   &none  &none  &kp F1          &kp F2  &kp F3    &kp F12               &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &none
-                                 &none  &kp LALT  &none                 &none            &kp KP_N0  &kp DOT
-                        >;
-                };
-
-
-         4th_layer {
-            label = "MOD";
-
-                        bindings = <
-   &none  &kp ESC   &kp LG(Q)  &none     &kp BSPC   &none              &none  &none  &none  &none  &none  &none  
-   &none  &sk LCMD  &sk LSHFT  &sk LALT  &sk LCTRL  &kp ENTER          &none  &none  &none  &none  &none  &none  
-   &none  &kp TAB   &none      &none     &kp SPACE  &none              &none  &none  &none  &none  &none  &none
-                               &none     &none      &none              &none  &none  &none
-                        >;
-                };
-
-
+        
 
         };
 };
