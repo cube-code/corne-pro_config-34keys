@@ -2,6 +2,9 @@
 #define CMD     1
 #define NUM_SYM 2
 #define FN_NUMP 3
+#define MOD     4
+#define CMD_LEF 5
+
 
 
 
@@ -83,6 +86,30 @@
    &none  &none  &kp F4  &kp F5     &kp F6    &kp F11               &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &none
    &none  &none  &kp F1  &kp F2     &kp F3    &kp F12               &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &none
                          &none      &kp LALT  &none                 &none            &kp KP_N0      &kp DOT
+                        >;
+                };
+
+
+         4th_layer {
+            label = "MOD";
+
+                        bindings = <
+   &none  &kp ESC   &kp LG(Q)  &none     &kp BSPC   &none              &none  &none  &none  &none  &none  &none  
+   &none  &sk LCMD  &sk LSHFT  &sk LALT  &sk LCTRL  &kp ENTER          &none  &none  &none  &none  &none  &none  
+   &none  &kp TAB   &none      &none     &kp SPACE  &none              &none  &none  &none  &none  &none  &none
+                               &none     &none      &none              &none  &none  &none
+                        >;
+                };
+
+
+         5th_layer {
+            label = "CMDL";
+
+                        bindings = <
+   &none  &none  &kp LG(Q)  &none  &none  &none          &none  &none  &none  &none  &none  &none  
+   &none  &none  &kp LG(A)  &none  &none  &none          &none  &none  &none  &none  &none  &none  
+   &none  &none  &kp LG(Z)  &none  &none  &none          &none  &none  &none  &none  &none  &none
+                            &none  &none  &none          &none  &none  &none
                         >;
                 };
 
