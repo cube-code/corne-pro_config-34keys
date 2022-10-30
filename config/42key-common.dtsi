@@ -71,7 +71,7 @@
           label = "Cmd";
 
                         bindings = <
-   &none  &none                 &kp LG(LEFT)  &kp UP     &kp LG(RIGHT)   &none                &none         &kp F13    &kp F14   &kp F15        &kp BSPC   &none
+   &none  &kp ESC               &kp LG(LEFT)  &kp UP     &kp LG(RIGHT)   &none                &none         &kp F13    &kp F14   &kp F15        &kp BSPC   &none
    &none  &mt LCMD LC(LS(TAB))  &kp LEFT      &kp DOWN   &kp RIGHT       &kp LC(TAB)          &tog FN_NUMP  &tog GAME  &kp HOME  &kp PAGE_UP    &kp ENTER  &none
    &none  &hsts LSHFT 0         &kp LA(LEFT)  &kp LG(K)  &kp LA(RIGHT)   &kp LG(M)            &kp CAPS      &kp DEL    &kp END   &kp PAGE_DOWN  &none      &none
                           	                  &none      &none           &none                &none         &kp RALT   &kp RCMD
@@ -95,10 +95,10 @@
             label = "FnNP";
 
                         bindings = <
-   &none  &none  &lt WIN_ARR F7  &kp F8     &kp F9    &kp F10               &kp TAB          &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp SPACE     &none
-   &none  &none  &kp F4          &kp F5     &kp F6    &kp F11               &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &none
-   &none  &none  &kp F1          &kp F2     &kp F3    &kp F12               &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &none
-                                 &mo MEDIA  &kp LALT  &none                 &none            &lt MEDIA KP_N0  &kp DOT
+   &none  &none         &lt WIN_ARR F7  &kp F8     &kp F9    &kp F10               &kp TAB          &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp SPACE     &none
+   &none  &none         &kp F4          &kp F5     &kp F6    &kp F11               &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &none
+   &none  &tog FN_NUMP  &kp F1          &kp F2     &kp F3    &kp F12               &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &none
+                                        &mo MEDIA  &kp LALT  &none                 &none            &lt MEDIA KP_N0  &kp DOT
                         >;
                 };
 
