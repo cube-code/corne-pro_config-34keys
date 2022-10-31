@@ -86,7 +86,7 @@
    &none  &kp N1    &kp N2           &kp N3          &kp N4           &kp N5             &kp N6    &kp N7            &kp N8        &kp N9            &kp N0           &none
    &none  &kp LCMD  &bhm LSHFT BSLH  &bhm LALT RBKT  &bhm LCTRL LBKT  &none              &kp LEFT  &bhm RCTRL DOWN   &bhm RALT UP  &bhm RSHFT RIGHT  &bhm RCMD SPACE  &none
    &none  &none     &none            &kp MINUS       &kp EQUAL        &none              &none     &kp SINGLE_QUOTE  &kp COMMA     &kp DOT           &kp FSLH         &none
-                    	             &none           &none            &none              &none     &none             &none
+                    	             &none           &kp SPACE        &none              &none     &none             &none
                         >;
                 };
 
