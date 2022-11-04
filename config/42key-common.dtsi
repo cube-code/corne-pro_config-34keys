@@ -2,67 +2,57 @@
 #define CMD     1
 #define NUM_SYM 2
 #define FN_NUMP 3
-#define MOD     4
-#define CMD_LEF 5
-#define GAME    6
-#define MEDIA   7
-#define WIN_ARR 8
-#define WARR_A  9
+#define MEDIA   4
+#define WIN_ARR 5
 
 
 #include "key-common.dtsi"
 
 &mt {
-    flavor = "tap-preferred";
-    tapping_term_ms = <200>;
-    quick-tap-ms = <125>;
-    global-quick-tap;
+   flavor = "tap-preferred";
+   tapping_term_ms = <200>;
 };
 
 &lt {
-   flavor = "balanced";
+   flavor = "hold-preferred";
    tapping_term_ms = <200>;
 };
 
 / {
 
+// Tap dance setting
     behaviors {
-        bhm: balanced_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RShift when tap once, CapsL when tap twice";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RSHFT>, <&kp CAPS>;
         };
-        
-        hsts: hold_shift_tap_sleep{
-            compatible = "zmk,behavior-hold-tap";
-            label = "shift_when_hold_screen_sleep_when_tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp &mac_screen_sleep>;
-        };
-
     };
 
 
     keymap {
         compatible = "zmk,keymap";
 
+// **Legend**
+// Mo   : Momentary switch to layer
+// Td	: Tap Dance
+// M/T	: Momentary switch to layer, double press to toggle layer
+// Co	: Combo Keys
+// ToLay: Set default layer
+// Tog  : Toogle layer
+// CBT	: Connect to bluetooth device
 
 
         default_layer {
           label = "Base";
 
                         bindings = <
-   &none  &lt FN_NUMP Q  &kp W         &kp E        &kp R          &kp T          &kp Y  &kp U              &kp I           &kp O         &kp P           &none
-   &none  &bhm LCMD A    &bhm LSHFT S  &bhm LALT D  &bhm LCTRL F   &kp G          &kp H  &bhm RCTRL J       &bhm RALT K     &bhm RSHFT L  &bhm RCMD SEMI  &none
-   &none  &lt CMD_LEF Z  &kp X         &kp C        &kp V          &kp B          &kp N  &kp M              &kp COMMA       &kp DOT       &kp FSLH        &none
-                                       &lt CMD TAB  &lt MOD SPACE  &none          &none  &lt NUM_SYM SPACE  &mt RCMD GRAVE
+   &lt FN_NUMP TAB  &kp Q  &kp W  &kp E        &kp R      &kp T             &kp Y      &kp U              &kp I           &kp O    &kp P     &kp BSPC
+   &kp LCMD         &kp A  &kp S  &kp D        &kp F      &kp G             &kp H      &kp J              &kp K           &kp L    &kp SEMI  &kp ENTER
+   &kp LSHFT        &kp Z  &kp X  &kp C        &kp V      &kp B             &kp N      &kp M              &kp COMMA       &kp DOT  &kp FSLH  &td0
+                                  &lt CMD ESC  &kp SPACE  &kp LALT          &kp LCTRL  &lt NUM_SYM SPACE  &mt RCMD GRAVE
                         >;
                 };
 
@@ -71,10 +61,10 @@
           label = "Cmd";
 
                         bindings = <
-   &none  &kp ESC               &kp LG(LEFT)  &kp UP     &kp LG(RIGHT)   &none                &none         &kp F13    &kp F14   &kp F15        &kp BSPC   &none
-   &none  &mt LCMD LC(LS(TAB))  &kp LEFT      &kp DOWN   &kp RIGHT       &kp LC(TAB)          &tog FN_NUMP  &tog GAME  &kp HOME  &kp PAGE_UP    &kp ENTER  &none
-   &none  &hsts LSHFT 0         &kp LA(LEFT)  &kp LG(K)  &kp LA(RIGHT)   &kp LG(M)            &kp CAPS      &kp DEL    &kp END   &kp PAGE_DOWN  &none      &none
-                          	                  &none      &none           &none                &none         &kp RALT   &kp RCMD
+   &kp LG(COMMA)  &kp LG(H)          &kp LG(LEFT)  &kp UP     &kp LG(RIGHT)  &none                &none         &kp F13   &kp F14   &kp F15        &none     &kp BSPC
+   &kp LCMD       &kp LC(LS(TAB))    &kp LEFT      &kp DOWN   &kp RIGHT      &kp LC(TAB)          &tog FN_NUMP  &none     &kp HOME  &kp PAGE_UP    &kp BSPC  &kp ENTER
+   &kp LSHFT      &mac_screen_sleep  &kp LA(LEFT)  &kp LG(K)  &kp LA(RIGHT)  &kp LG(M)            &none         &kp DEL   &kp END   &kp PAGE_DOWN  &none     &kp RSHFT
+                          	                       &none      &none          &none                &kp RCTRL     &kp RALT  &kp RCMD
                         >;
                 };
 
@@ -83,10 +73,10 @@
             label = "NuSy";
 
                         bindings = <
-   &none  &kp N1    &kp N2           &kp N3          &kp N4           &kp N5             &kp N6    &kp N7            &kp N8        &kp N9            &kp N0           &none
-   &none  &kp LCMD  &bhm LSHFT BSLH  &bhm LALT RBKT  &bhm LCTRL LBKT  &none              &kp LEFT  &bhm RCTRL DOWN   &bhm RALT UP  &bhm RSHFT RIGHT  &bhm RCMD SPACE  &none
-   &none  &none     &none            &kp MINUS       &kp EQUAL        &none              &none     &kp SINGLE_QUOTE  &kp COMMA     &kp DOT           &kp FSLH         &none
-                    	             &none           &kp SPACE        &none              &none     &none             &none
+   &kp GRAVE  &kp N1  &kp N2    &kp N3     &kp N4     &kp N5            &kp N6    &kp N7            &kp N8     &kp N9     &kp N0    &kp MINUS
+   &kp LCMD   &none   &kp BSLH  &kp RBKT   &kp LBKT   &none             &kp LEFT  &kp DOWN          &kp UP     &kp RIGHT  &none     &kp EQUAL
+   &kp LSHFT  &none   &none     &none      &none      &none             &none     &kp SINGLE_QUOTE  &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
+                    	        &kp LCTRL  &kp SPACE  &kp LALT          &none     &none             &none
                         >;
                 };
 
@@ -95,52 +85,15 @@
             label = "FnNP";
 
                         bindings = <
-   &none  &none         &lt WIN_ARR F7  &kp F8     &kp F9    &kp F10               &kp TAB          &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp SPACE     &none
-   &none  &none         &kp F4          &kp F5     &kp F6    &kp F11               &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &none
-   &none  &tog FN_NUMP  &kp F1          &kp F2     &kp F3    &kp F12               &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &none
-                                        &mo MEDIA  &kp LALT  &none                 &none            &lt MEDIA KP_N0  &kp DOT
+   &none  &mo WIN_ARR  &kp F7  &kp F8     &kp F9        &kp F10           &kp TAB          &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp SPACE     &kp BSPC
+   &none  &none        &kp F4  &kp F5     &kp F6        &kp F11           &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp ENTER
+   &none  &none        &kp F1  &kp F2     &kp F3        &kp F12           &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &kp RSHFT
+                               &mo MEDIA  &tog FN_NUMP  &kp LALT          &kp SPACE        &lt MEDIA KP_N0  &kp DOT
                         >;
                 };
 
 
          4th_layer {
-            label = "MOD";
-
-                        bindings = <
-   &none  &kp ESC   &none      &none     &kp BSPC   &kp GRAVE              &kp GRAVE  &none     &none   &none      &kp BSPC   &none
-   &none  &sk LCMD  &sk LSHFT  &sk LALT  &sk LCTRL  &kp ENTER              &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &kp ENTER  &none
-   &none  &kp TAB   &none      &none     &kp SPACE  &none                  &none      &none     &none   &none      &none      &none
-                               &none     &none      &none                  &none      &none     &none
-                        >;
-                };
-
-
-         5th_layer {
-            label = "CMDL";
-
-                        bindings = <
-   &none  &none  &none      &none      &none  &none          &none  &none  &none  &none  &none  &none  
-   &none  &none  &kp LG(A)  &none      &none  &none          &none  &none  &none  &none  &none  &none  
-   &none  &none  &kp LG(Z)  &kp LG(Q)  &none  &none          &none  &none  &none  &none  &none  &none
-                            &none      &none  &none          &none  &none  &none
-                        >;
-                };
-
-
-
-        6th_layer {
-            label = "GAME";
-
-                        bindings = <
-   &none  &kp Q  &kp W  &kp E     &kp R      &kp T          &kp Y  &kp U      &kp I      &kp O    &kp P     &none
-   &none  &kp A  &kp S  &kp D     &kp F      &kp G          &kp H  &kp J      &kp K      &kp L    &kp SEMI  &none
-   &none  &kp Z  &kp X  &kp C     &kp V      &kp B          &kp N  &kp M      &kp COMMA  &kp DOT  &kp FSLH  &none
-                        &kp LCMD  &kp SPACE  &none          &none  &kp RSHFT  &tog GAME
-                        >;
-                };
-
-
-        7th_layer {
             label = "Medi";
 
                         bindings = <
@@ -152,29 +105,16 @@
                 };
 
 
-        8th_layer {
+         5th_layer {
             label = "WnAr";
 
                         bindings = <
-   &none  &none  &none  &lt WARR_A LC(LA(LS(T)))  &kp LC(LA(LS(Y)))  &kp LC(LA(LS(U)))          &kp LC(LA(LS(Z)))  &none  &none  &none  &none   &kp LC(LA(LS(BSPC)))
-   &none  &none  &none  &kp LC(LA(LS(G)))         &kp LC(LA(LS(H)))  &kp LC(LA(LS(J)))          &none              &none  &none  &none  &none   &kp LC(LA(LS(ENTER)))
-   &none  &none  &none  &kp LC(LA(LS(B)))         &kp LC(LA(LS(N)))  &kp LC(LA(LS(M)))          &none              &none  &none  &none  &none   &none
-                        &none                     &none              &none                      &none              &none  &none
+   &none  &none  &kp LC(LA(LS(T)))  &kp LC(LA(LS(Y)))  &kp LC(LA(LS(U)))  &kp LC(LA(LS(I)))              &none             &none              &none  &none              &none  &kp LC(LA(LS(BSPC)))
+   &none  &none  &kp LC(LA(LS(G)))  &kp LC(LA(LS(H)))  &kp LC(LA(LS(J)))  &kp LC(LA(LS(K)))              &kp LC(LA(LEFT))  &kp LC(LA(LS(Z)))  &none  &kp LC(LA(RIGHT))  &none  &kp LC(LA(LS(ENTER)))
+   &none  &none  &kp LC(LA(LS(B)))  &kp LC(LA(LS(N)))  &kp LC(LA(LS(M)))  &kp LC(LA(LS(COMMA)))          &none             &none              &none  &none              &none  &none
+                                    &none              &none              &none                          &none             &none              &none
                         >;
                 };
-
-
-        9th_layer {
-            label = "WArA";
-
-                        bindings = <
-   &none  &none  &none  &none  &kp LC(UP)    &none                  &none  &none  &none  &none  &none  &none  
-   &none  &none  &none  &none  &kp LC(LEFT)  &kp LC(RIGHT)          &none  &none  &none  &none  &none  &none  
-   &none  &none  &none  &none  &kp LC(DOWN)  &none                  &none  &none  &none  &none  &none  &none
-                        &none  &none         &none                  &none  &none  &none
-                        >;
-                };
-
 
         };
 };
