@@ -86,8 +86,8 @@
 
                         bindings = <
    &none         &mo WIN_ARR    &kp F7  &kp F8     &kp F9        &kp F10           &kp TAB          &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp SPACE     &kp BSPC
-   &kp LC(UP)    &kp LC(RIGHT)  &kp F4  &kp F5     &kp F6        &kp F11           &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp ENTER
-   &kp LC(DOWN)  &kp LC(LEFT)   &kp F1  &kp F2     &kp F3        &kp F12           &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &kp RSHFT
+   &kp LC(UP)    &kp LC(LEFT)   &kp F4  &kp F5     &kp F6        &kp F11           &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp ENTER
+   &kp LC(DOWN)  &kp LC(RIGHT)  &kp F1  &kp F2     &kp F3        &kp F12           &kp KP_DIVIDE    &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MINUS  &kp RSHFT
                                         &mo MEDIA  &tog FN_NUMP  &kp LALT          &kp SPACE        &lt MEDIA KP_N0  &kp DOT
                         >;
                 };
@@ -109,10 +109,10 @@
             label = "WnAr";
 
                         bindings = <
-   &none  &none  &kp LC(LA(LS(T)))  &kp LC(LA(LS(Y)))  &kp LC(LA(LS(U)))  &kp LC(LA(LS(I)))              &none             &none              &none  &none              &none  &kp LC(LA(LS(BSPC)))
-   &none  &none  &kp LC(LA(LS(G)))  &kp LC(LA(LS(H)))  &kp LC(LA(LS(J)))  &kp LC(LA(LS(K)))              &kp LC(LA(LEFT))  &kp LC(LA(LS(Z)))  &none  &kp LC(LA(RIGHT))  &none  &kp LC(LA(LS(ENTER)))
-   &none  &none  &kp LC(LA(LS(B)))  &kp LC(LA(LS(N)))  &kp LC(LA(LS(M)))  &kp LC(LA(LS(COMMA)))          &none             &none              &none  &none              &none  &none
-                                    &none              &none              &none                          &none             &none              &none
+   &none  &none              &kp LC(LA(LS(W)))  &kp LC(LA(LS(E)))  &kp LC(LA(LS(R)))      &kp LC(LA(LS(T)))          &kp LC(LA(LS(Y)))  &kp LC(LA(LS(U)))      &kp LC(LA(LS(I)))      &kp LC(LA(LS(O)))    &kp LC(LA(LS(P)))     &kp LC(LA(LS(BSPC)))
+   &none  &kp LC(LA(LS(A)))  &kp LC(LA(LS(S)))  &kp LC(LA(LS(D)))  &kp LC(LA(LS(F)))      &kp LC(LA(LS(G)))          &kp LC(LA(LS(H)))  &kp LC(LA(LS(J)))      &kp LC(LA(LS(K)))      &kp LC(LA(LS(L)))    &kp LC(LA(LS(SEMI)))  &kp LC(LA(LS(ENTER)))
+   &none  &kp LC(LA(LS(Z)))  &kp LC(LA(LS(X)))  &kp LC(LA(LS(C)))  &kp LC(LA(LS(V)))      &kp LC(LA(LS(B)))          &kp LC(LA(LS(N)))  &kp LC(LA(LS(M)))      &kp LC(LA(LS(COMMA)))  &kp LC(LA(LS(DOT)))  &kp LC(LA(LS(FSLH)))  &none
+                                                &none              &kp LC(LA(LS(SPACE)))  &none                      &none              &kp LC(LA(LS(SPACE)))  &none
                         >;
                 };
 
