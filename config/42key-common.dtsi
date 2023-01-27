@@ -30,9 +30,9 @@
             bindings = <&kp RSHFT>, <&kp CAPS>;
         };
 
-        ht_hp: balanced_homerow_mods {
+        ht_hp: hold_tap_hold_preffered {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "hold_tap_hold_preffered";
             #binding-cells = <2>;
             tapping-term-ms = <200>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
