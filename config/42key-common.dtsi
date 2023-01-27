@@ -30,13 +30,13 @@
             bindings = <&kp RSHFT>, <&kp CAPS>;
         };
 
-        ht_hp: hold_tap_hold_preferred {
-            compatible = "zmk,behavior-tap-dance";
-            label = "Hold tap with hold preferred flavor";
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
     };
@@ -62,7 +62,7 @@
    &lt FN_NUMP TAB  &kp Q  &kp W  &kp E        &kp R      &kp T             &kp Y      &kp U              &kp I           &kp O    &kp P     &kp BSPC
    &kp LCMD         &kp A  &kp S  &kp D        &kp F      &kp G             &kp H      &kp J              &kp K           &kp L    &kp SEMI  &kp ENTER
    &kp LSHFT        &kp Z  &kp X  &kp C        &kp V      &kp B             &kp N      &kp M              &kp COMMA       &kp DOT  &kp FSLH  &td0
-                                  &lt CMD ESC  &kp SPACE  &kp LALT          &kp LCTRL  &lt NUM_SYM SPACE  &ht_hp RCMD GRAVE
+                                  &lt CMD ESC  &kp SPACE  &kp LALT          &kp LCTRL  &lt NUM_SYM SPACE  &bhm RCMD GRAVE
                         >;
                 };
 
