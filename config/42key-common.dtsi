@@ -32,7 +32,7 @@
 
         ht_hp: hold_tap_hold_preffered {
             compatible = "zmk,behavior-hold-tap";
-            label = "hold_tap_hold_preffered";
+            label = "Hold tap with hold preferred flavor";
             #binding-cells = <2>;
             tapping-term-ms = <200>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
