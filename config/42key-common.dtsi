@@ -30,7 +30,7 @@
             bindings = <&kp RSHFT>, <&kp CAPS>;
         };
 
-        bhm: balanced_homerow_mods {
+        ht_hp: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
@@ -62,7 +62,7 @@
    &lt FN_NUMP TAB  &kp Q  &kp W  &kp E        &kp R      &kp T             &kp Y      &kp U              &kp I           &kp O    &kp P     &kp BSPC
    &kp LCMD         &kp A  &kp S  &kp D        &kp F      &kp G             &kp H      &kp J              &kp K           &kp L    &kp SEMI  &kp ENTER
    &kp LSHFT        &kp Z  &kp X  &kp C        &kp V      &kp B             &kp N      &kp M              &kp COMMA       &kp DOT  &kp FSLH  &td0
-                                  &lt CMD ESC  &kp SPACE  &kp LALT          &kp LCTRL  &lt NUM_SYM SPACE  &bhm RCMD GRAVE
+                                  &lt CMD ESC  &kp SPACE  &kp LALT          &kp LCTRL  &lt NUM_SYM SPACE  &ht_hp RCMD GRAVE
                         >;
                 };
 
