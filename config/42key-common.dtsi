@@ -71,7 +71,7 @@
           label = "Cmd";
 
                         bindings = <
-   &kp LG(COMMA)  &kp LG(H)          &kp LG(LEFT)  &kp UP     &kp LG(RIGHT)  &kp LCMD(GRAVE)          &none         &kp F13   &kp F14   &kp F15        &none     &kp BSPC
+   &kp LG(COMMA)  &kp LG(H)          &kp LG(LEFT)  &kp UP     &kp LG(RIGHT)  &kp LG(GRAVE)          &none         &kp F13   &kp F14   &kp F15        &none     &kp BSPC
    &kp LCMD       &kp LC(LS(TAB))    &kp LEFT      &kp DOWN   &kp RIGHT      &kp LC(TAB)           &tog FN_NUMP  &none     &kp HOME  &kp PAGE_UP    &kp BSPC  &kp ENTER
    &kp LSHFT      &mac_screen_sleep  &kp LA(LEFT)  &kp LG(K)  &kp LA(RIGHT)  &kp LG(M)             &none         &kp DEL   &kp END   &kp PAGE_DOWN  &none     &kp RSHFT
                           	                       &none      &none          &none                 &kp RCTRL     &kp RALT  &kp RCMD
